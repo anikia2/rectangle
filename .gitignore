@@ -38,8 +38,7 @@ class Rectangle : public Point{
        } 
        Point get_tr() {return tr;}
        Point get_bl() {return bl;}       
-       bool point_check (Point point)
-            {
+
             
 };
        bool point_check (Point point)
