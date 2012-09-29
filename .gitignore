@@ -1,12 +1,77 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
+#include<iostream.h>
+#include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-# Compiled Dynamic libraries
-*.so
+using namespace std;
+class Point{
+ protected:
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+ public:
+        double x;
+        double y;
+        double getx() {return x;}
+        double gety() {return y;}
+        void set_x(double x){
+             x=x;
+        }
+        void set_y(double y){
+             y=y;
+        }
+        Point (double x , double y); 
+        Point ();             
+};
+class Rectangle : public Point{
+      
+ private:
+        Point tr;
+        Point bl;
+        bool check;    
+ public:
+       Rectangle (Point bl, Point tr);
+       Rectangle();
+       void set_tr(Point x){
+             tr=x;
+       }
+       void set_bl(Point y){
+             bl=y;
+       } 
+       Point get_tr() {return tr;}
+       Point get_bl() {return bl;}       
+       bool point_check (Point point)
+            {
+            
+};
+       bool point_check (Point point)
+            {
+            bool check;             
+            Rectangle cordinate;
+            double x_point,x_tr,x_bl,y_point,y_bl,y_tr;            
+            x_point=getx(point);
+            x_tr=cordinate.tr.x;
+            x_bl=cordinate.bl.x;
+            y_point=gety(point);
+            y_tr=cordinate.tr.y;
+            y_bl=cordinate.bl.y;
+            if(x_bl <= x_point){
+                 check=true;
+                 }            
+            else if (x_tr >= x_point ) {
+                 check=true;
+                 }
+            else check= false;
+            if(y_bl <= y_point){
+                 check=true;
+                 }
+            else if (y_tr >= y_point ) {
+                 check=true;
+                 }
+            else check= false;            
+            return check;
+            }
+
+int main(){
+    
+    
+ return 0;   
+}
