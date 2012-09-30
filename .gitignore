@@ -6,10 +6,9 @@
 using namespace std;
 class Point{
  protected:
-
- public:
         double x;
         double y;
+ public:
         double getx() {return x;}
         double gety() {return y;}
         void set_x(double x){
@@ -25,8 +24,7 @@ class Rectangle : public Point{
       
  private:
         Point tr;
-        Point bl;
-        bool check;    
+        Point bl;    
  public:
        Rectangle (Point bl, Point tr);
        Rectangle();
@@ -39,19 +37,17 @@ class Rectangle : public Point{
        Point get_tr() {return tr;}
        Point get_bl() {return bl;}       
 
-            
-};
-       bool point_check (Point point)
+       bool point_check(Point point)
             {
             bool check;             
             Rectangle cordinate;
             double x_point,x_tr,x_bl,y_point,y_bl,y_tr;            
-            x_point=getx(point);
-            x_tr=cordinate.tr.x;
-            x_bl=cordinate.bl.x;
-            y_point=gety(point);
-            y_tr=cordinate.tr.y;
-            y_bl=cordinate.bl.y;
+            x_point=getx();
+            x_tr=cordinate.tr.getx();
+            x_bl=cordinate.bl.getx();
+            y_point=gety();
+            y_tr=cordinate.tr.gety();
+            y_bl=cordinate.bl.gety();
             if(x_bl <= x_point){
                  check=true;
                  }            
@@ -67,7 +63,9 @@ class Rectangle : public Point{
                  }
             else check= false;            
             return check;
-            }
+            }     
+};
+       
 
 int main(){
     
