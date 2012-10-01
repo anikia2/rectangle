@@ -63,9 +63,85 @@ class Rectangle : public Point{
                  }
             else check= false;            
             return check;
-            }     
+            }
+       Rectangle compare(Rectangle rect1 , Rectangle rect2){
+             Rectangle mixed_rectangle;
+             double compare_tr1 , compare_bl1 ,compare_tr2 , compare_bl2; 
+             bool check;       
+             compare_tr1=rect1.tr.getx();
+             compare_tr2=rect2.tr.getx(); 
+             if (compare_tr1> compare_tr2){
+                              mixed_rectangle.tr.set_x(compare_tr2);
+                                           }
+             else mixed_rectangle.tr.set_x(compare_tr1);
+             compare_tr1=rect1.tr.gety();
+             compare_tr2=rect2.tr.gety();
+             if (compare_tr1> compare_tr2){
+                              mixed_rectangle.tr.set_y(compare_tr2);
+                                           }
+             else mixed_rectangle.tr.set_y(compare_tr1);
+             compare_bl1=rect1.bl.getx();                             
+             compare_bl2=rect2.bl.getx(); 
+             if (compare_bl1> compare_bl2){
+                              mixed_rectangle.bl.set_x(compare_bl1);
+                                           }
+             else mixed_rectangle.bl.set_x(compare_bl1);
+             compare_bl1=rect1.bl.gety();                             
+             compare_bl2=rect2.bl.gety();              
+             if (compare_bl1> compare_bl2){
+                              mixed_rectangle.bl.set_y(compare_bl1);
+                                           }
+             else mixed_rectangle.bl.set_y(compare_tr2); 
+             return mixed_rectangle;                       
+             
+             }     
 };
        
+
+int main(){
+ Rectangle rect , rect2 , rect3 ;
+ Point point;
+ int i;
+ double x,y;
+ bool check;
+ Rectangle();
+ switch ( i ) {
+        
+ case 1:
+  cout >> "vuvedi kordinati na top rigt">>endl;
+  cin << x;
+  cin << y;
+  rect1.tr.set_x(x);
+  rect1.tr.set_y(y);
+  cout >> "vuvedi kordinati na bottom left">>endl;
+  cin << x;
+  cin << y;
+  rect1.bl.set_x(x);
+  rect1.bl.set_y(y);  
+   break;
+ case 2:
+  cout >> "vuvedi kordinati na tochka za proverka left">>endl;
+  cin << x;
+  cin << y;
+  point.set_x(x);
+  point.set_y(y);
+  check=point_check(point);
+  if (check == true){cout >> "tochkata e v pravougulnika"}
+  else {cout>>"tochkata ne e v pravougulnika" }
+  
+   break;
+ case 3:
+   
+   break;   
+
+default:
+
+  break;
+}   
+    
+ return 0;   
+}
+ 
 
 int main(){
     
